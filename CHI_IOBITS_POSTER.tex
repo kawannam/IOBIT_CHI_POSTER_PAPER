@@ -1,0 +1,159 @@
+\documentclass[sigchi-a, authorversion]{acmart}
+\usepackage{booktabs} % For formal tables
+\usepackage{ccicons}  % For Creative Commons citation icons
+\usepackage{lmodern}
+
+% Copyright
+\setcopyright{acmcopyright}
+
+
+% DOI
+\acmDOI{10.475/123_4}
+
+% ISBN
+\acmISBN{123-4567-24-567/08/06}
+
+%Conference
+\acmConference[WOODSTOCK'97]{ACM Woodstock conference}{July 1997}{El
+  Paso, Texas USA}
+\acmYear{1997}
+\copyrightyear{2016}
+
+\acmPrice{15.00}
+
+%\acmBadgeL[http://ctuning.org/ae/ppopp2016.html]{ae-logo}
+%\acmBadgeR[http://ctuning.org/ae/ppopp2016.html]{ae-logo}
+
+\begin{document}
+\title{I/O Bits: A new approach to Personal Informatics}
+
+\author{Kendra Wannamaker}
+\affiliation{%
+  \institution{University of Calgary}
+  \city{Calgary}
+  \country{Canada} }
+\email{kawannam@ucalgary.ca}
+
+\author{Sandeep Zechariah George}
+\affiliation{%
+  \institution{University of Calgary}
+  \city{Calgary}
+  \country{Canada} }
+\email{sandeep.kollannur@ucalgary.ca}
+
+\author{Marian Dörk}
+\affiliation{%
+  \institution{University of Applied Sciences}
+  \city{Potsdam}
+  \country{Germany} }
+\email{doerk@fh-potsdam.de}
+
+
+\author{Wesley Willett}
+\affiliation{%
+  \institution{University of Calgary}
+  \city{Calgary}
+  \country{Canada} }
+\email{wesley.willett@ucalgary.ca}
+
+
+% The default list of authors is too long for headers.
+\renewcommand{\shortauthors}{F. Author et al.}
+
+\ccsdesc[300]{Human-centered computing~Human Computer Interaction}
+\ccsdesc[300]{Human-centered computing~Visualization}
+
+
+\begin{abstract}
+Knowledge is power - Personal Informatics is a class of systems that use personal data to improve self-knowledge. These systems are commonly designed for specific tasks, using sensors to offload the effort from the user to the system. We suggest exploring a new strategy: self-logging equipment that is inexpensive, multi-purpose, and embeddable. By creating a tool with a generic interface, we enable people to have more control and customization than traditional systems while still alleviating the user’s workload. We propose I/O Bits - simple modules with physical interaction components and an e-paper display that individuals can use to manually track a wide variety of activities and phenomena throughout their daily lives. The display shows visualizations of the user’s data to support reflection and insights during tracking. The modules are small and low-power, allowing them to be integrated into a diverse range of everyday environments. This allows our system to support spontaneous, flexible, and user-driven tracking that is not restricted by sensors or mobile devices.
+\end{abstract}
+
+
+\keywords{Personal Informatics; Self-logging; User-driven tracking; Internet of Things}
+
+
+\maketitle
+
+\begin{sidebar}
+  \textbf{Good Utilization of the Side Bar}
+
+  \textbf{Preparation:} Do not change the margin
+  dimensions and do not flow the margin text to the
+  next page.
+
+  \textbf{Materials:} The margin box must not intrude
+  or overflow into the header or the footer, or the gutter space
+  between the margin paragraph and the main left column.
+
+  \textbf{Images \& Figures:} Practically anything
+  can be put in the margin if it fits. Use the
+  \texttt{{\textbackslash}marginparwidth} constant to set the
+  width of the figure, table, minipage, or whatever you are trying
+  to fit in this skinny space.
+
+  \caption{This is the optional caption}
+  \label{bar:sidebar}
+\end{sidebar}
+
+\section{Introduction}
+Personal Informatics systems help people collect personally relevant information for the purpose of self-reflection and gaining self-knowledge [4]. Self-logging technology has become very popular in recent years, with the sector estimated to hit 7 billion dollars by 2024 in the US alone [1]. A majority of self-logging tools utilize sensors to reduce the workload on users. Examples of these systems include: Fitbit for fitness [], Mint for finances [], and Strava [] for location. An alternative approach these <self logging> systems often take when sensing is too complex is to integrate user-driven logging systems into multi-purpose mobile devices, such as cellphones. Examples of this type of system include: time logging apps like Toggl[], calorie counters such as MyFitnessPal[], and mood trackers such as Happiness[].
+
+While the first approach is successful in reducing the load on the user, it is also limiting. Each device is specifically designed for particular tasks and give users little flexibility to track other activities. < As a result, the sensor-based systems often have a specific purpose and make it difficult for users to customize what data counts(expand). <You have a reference that talks about the importance of customization/story telling/and the distrust in sensors – maybe use that here>.> The second approach is usually inexpensive and allows for a wider breadth of data types to be collected. As they are seamlessly integrated into a user’s existing technology, they are easy to forget and therefore easy to abandon <You have a citation sating that when people start missing data collection moments they abandon – use it here> Additionally, these systems are often cumbersome to interact with while engaged in an activity, making them inconvenient. <Do you have a citation?>
+
+We want to propose a third approach that focuses on collecting a wide variety of data types, facilitates user customization while reducing the workload of the user (as compared to low tech solutions such as pen and paper), and keeping costs low. While this approach will not be without its own set of drawbacks, we believe it fills a gap left by the other two approaches.
+
+
+To study this approach, we have designed I/O Bits: cheap, low-power tracking and visualization tools that can be embedded in a variety of physical environments.  We imagine a (very near) future in which it’s possible to have inexpensive, dedicated, and connected tracking and visualization tools integrated into your home.
+
+The specific design of I/O Bits also provides solutions to two major issues with personal informatics systems: abandonment and security. Research has shown that people abandon devices for a variety of reasons, not all of which are bad [1, 3, 4]. Often people abandon tracking because they have gained the insights they need, have successfully created a habit, or have deemed their tracking not worth the effort. Regardless of the reason, most people abandon tracking within the first 6 months [1, 6]. For most self-logging tools this is the end of their life. However, because I/O Bits are generic they are not only able to be used concurrently to track a wide variety of data, each device is also reusable. Each device can be repurposed repeatedly, allowing users to abandon tracking tasks they no longer find useful and start tracking new activities. In our system a data point is logged when a user presses a physical button on the I/O Bit, because there are no sensors the data collect is relatively simplistic. Even if an adversary could gain access to our data, the generic nature of our system and the simplistic data it collects means that privacy, without further context, would be maintained.
+
+
+\section{I/0 Bits}
+The IO Bit is a small battery-operated device meant to be placed in your home. It is designed to be inexpensive, low-maintenance, and flexible. Its simple interface optimal for fast interactions. It is meant to be used in a network of other I/O Bits each collecting a very specific set of data and broadcasting that to a home base. The physical placement in the home – meant ot assit with remember to use the device and its built-in vis as a way of reflecting as you log. 
+
+\subsection{The Hardware}
+After several design iterations and prototypes we have landed on the current design. A simple device composed of an e-paper display, an ESP 32 board, a 5000mAh LIPO battery, and 5 push buttons (2 for data collection and 3 for controls). Each device is approximately 90x60x25cm and should last several months without needing to be charged. These components are optimal for building small, low-maintenance, and affordable devices with each one costing about \$35 (USD) to build (Less if they were to be manufactured in bulk).  <Insert Image>
+
+\subsection{The System}
+A user will decide what they would like to track and place an I/O Bit into that context. It will be asleep, or in a state resembling off until the user interacts with it. After a button press the device wakes up and connects to the sever. The server could be an online database or a local raspberry pi (which would prevent the need to send any information over the internet).  The I/O Bit indicates to the server what button was pressed and the server saves that along with a timestamp into the devices current file. The server then sends meta data about the file as a whole and the last one hundred data points back to the I/O Bit to be visualized. Each I/O Bit has a set of visualizations the user can toggle through – designed to capture the different components of our simple data as well as the support main reasons why people collect personal data. <Table/diagram> (Change, Learn, Have) After the display is updated the device goes back to sleep to conserve battery life, but as the display is e-paper the visualization will continue to be displayed.
+
+\section{Related Work}
+Devices similar to I/O Bits have been created to engage people in public spaces on topics like civic engagement and customer satisfaction. Research [x] Design [] has developed multi-unit displays to be placed within a community. The system meant to inform and engage passers-by on civic issues relevant to that area. People who actively interacted with the system became co-authors of the data-driven narrative that was displayed in multiple locations around the community. <maybe connecting sentence?> A commercially available device that is similar to our I/O Bits is the “Happy or Not” terminal [] – a tactile feedback system meant to gauge customer satisfaction. 
+
+Personal Informatics systems meant for the home have a similar purpose to ours but with varying designs. There is the old school approach of pen and paper, sensor based in-situ displays, and larger tactile displays. Blogger Nicky Case documented a year of resolutions, each month attempting to make a new habit [] <ref image>. She marked down on a sticky note if she completed her habit or not each day during the month. Throughout the year she had a very amount of success but in her reporting of the data on her blog she weaved in her story. This echo’s <Li’s?> sentiment about -< Interweaving data with stories?>. <Microsoft research> created energy neutral displays meant to visualize sensor data throughout a user’s home. While these displays are not capable of taking user input we believe this demonstrates that one, larger companies are investing in data visualizations for the home, and two, small energy neutral versions of our units are conceivable in the near future. Lastly, there is the Everyday Calendar designed by Simone Grietz[], a large calendar display with a light and a button for everyday in a year. Similar to Case’s sticky note this device is meant to capture if you completed a daily goal. We hope that our system is able to achieve a useful compromise between the flexibility of logging with pen and paper and the convenience of a purely automated in-situ visualization.
+
+\section{Discussion}
+We believe I/O Bits have the potential to be a simple and handy tool to help self-loggers who have unique and complex questions. To the best of our knowledge I/O Bits are filling a niche that has not been explored in existing personal informatics systems. This system bridges the gap between the traditional pen and paper approach where a user is responsible for the collection, integration, and reflection stages and the smartwatch where each step is completely automated. The traditional approach is cost effective and allows each individual to ask their own question, log their own way, and come to their own conclusions. However, it is extremely time consuming and most people are not willing to stick with this process in the long term []. The more automated approach is far more time effective, it collects, processes, and offers visualizations for reflection, meaning that more people track for longer periods of time and make it around the Tracking and acting cycle more []. <make table with different levels of automation>. In our system the user must collect the data, though we have tried to remove as many barriers as possible for the user to do this quickly and easily. The rest of the self-logging stages are automated and allows the user to reflect while they collect, easily edit their data, and combine it with other data sets (such as weather). It is more malleable than the pen and paper approach because you are not locked into the visualization you started with like Case was. And it is less expensive than automated systems. It can be reclaimed from the drawer to answer an entirely different question than it was used for last time. Because quitting it not all bad…. 
+
+
+
+Potential Drawbacks:
+While we have focused on the potential benefits to our system, there are some obvious drawbacks to both our approach and our implementation. For instance, the simplicity of our data logging makes logging complex data more challenging. We believe that this system – especially several units working in together – is capable of capturing a wide variety of more complex data, it is apparent that this is not a solution for every type of logging. For instance step counting would be completely impractical with our given configuration, or food tracking. And while we accept that this approach will need to be one in many to fit all self-tracking tasks – we have considered several solutions. We could add a plethora of sensors inside the device to act as supplementary information to a user’s logs. (At the detriment of cost and battery life). We could add different input mechanisms that would be suitable for different tasks, i.e. switches, joysticks, or number pads. (This may cause slower interactions with this device). One consideration is to make the inputs modular to our device so users could select the best mechanism for what they wish to log. 
+
+The generic I/O Bit fails to assist users with data interpretations, what does it mean, what should I do next? In the literature there is concern about leaving users to interpret their data set on their own []. So while the generic nature of our I/O Bits helps with flexibility and security, it does not help the users with their "next steps". It should be noted that not everyone is in agreement on the matter, some experts express concern for pushing people to the average []. <explain more ~he generic design does avoid encouraging users to be “normal” - it doesn’t say you are being lazy if you do not take 10000 steps in a day.> But many users may not be able to interpret and utilize their data to the full extent. We imagine that an ecosystem could be created around such a system that would allow for the open source community or third part companies to make applications (Visualizations, action plans, etc) that allows for more complex analysis, more expertise to be applied, and the data to become more useful.
+
+ 
+\section{Moving Forward}
+Now that we have a system we would like to deploy it. A lot of the claims about the pros and cons of our system come from a theoretical perspective. We plan to deploy the system for varying amounts of time and with vary numbers of I/O Bits. \cite{CHINOSAUR:venue}
+
+Our next steps will focus on creating visualizations for this data as well as user’s studies to evaluate the system. Our aim will be to create visualizations for our e-paper displays that support the different motivations for self-loggers and the different levels of measurement. Through the use of user studies, we will examine how people integrate these tools into their lives and determine if the burden on the user during the collection stage has been alleviated enough to be useful. To determine if we have met are goal of merging the convenience of system-based self-logging technology with the flexibility and customization of user-driven systems.
+
+Looking even further into the future we might explore building a platform that allows users to explore their data, combine it with other data sets, add context and create more complex visualizations. Alternatively we may explore making the input mechanisms modular and explore the different use-cases they may benefit. 
+
+
+\begin{acks}
+  We thank all the volunteers, publications support, staff, and
+  authors who wrote and provided helpful comments on previous versions
+  of this document. As well authors 1, 2, and 3 gratefully acknowledge
+  the grant from \grantsponsor{001}{NSF}{}
+  (\#\grantnum{001}{1234-2222-ABC}). Author 4 for example may want to
+  acknowledge a supervisor/manager from their original employer. This
+  whole paragraph is just for example. Some of the references cited in
+  this paper are included for illustrative purposes only.
+\end{acks}
+
+
+\bibliography{sample-bibliography-sigchi-a}
+\bibliographystyle{ACM-Reference-Format}
+
+\end{document}
